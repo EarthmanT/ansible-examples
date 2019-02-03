@@ -1,6 +1,18 @@
 ---
 # This playbook contains common plays that will be run on all nodes.
 
+- name: Install firewalld
+  become: yes
+  package:
+    name: firewalld
+
+- name: Start and set up firewalld
+  become: yes
+  service:
+    name: firewalld
+    enabled: yes
+    state: started
+
 - name: Install ntp
   yum: name=ntp state=present
   tags: ntp

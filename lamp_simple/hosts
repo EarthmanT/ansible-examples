@@ -1,7 +1,6 @@
 [webservers]
-web3
+10.239.2.60 ansible_connection=ssh ansible_user=centos ansible_ssh_private_key_file=~/.ssh/cfy-manager-key-os ansible_become=true ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+
 
 [dbservers]
-web2
-
-
+10.239.2.58 ansible_connection=ssh ansible_user=centos ansible_ssh_private_key_file=~/.ssh/cfy-manager-key-os ansible_become=true ansible_ssh_common_args='-o StrictHostKeyChecking=no'

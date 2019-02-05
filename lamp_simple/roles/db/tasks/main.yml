@@ -26,7 +26,7 @@
 - name: Create Mysql configuration file
   template: src=my.cnf.j2 dest=/etc/my.cnf
   notify:
-  - restart mysql
+  - restart mariadb
 
 - name: Start mariadb.service
   service: name=mariadb.service state=started enabled=yes
@@ -37,7 +37,7 @@
 #   notify: restart iptables
 
 - firewalld:
-    port: "{{ mysql_port }}"
+    port: "{{ mysql_port }}/tcp"
     permanent: yes
     state: enabled
 

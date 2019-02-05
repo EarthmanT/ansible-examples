@@ -1,6 +1,16 @@
-[webservers]
-10.239.2.60 ansible_connection=ssh ansible_user=centos ansible_ssh_private_key_file=~/.ssh/cfy-manager-key-os ansible_become=true ansible_ssh_common_args='-o StrictHostKeyChecking=no'
-
-
-[dbservers]
-10.239.2.58 ansible_connection=ssh ansible_user=centos ansible_ssh_private_key_file=~/.ssh/cfy-manager-key-os ansible_become=true ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+webservers:
+  hosts:
+    web:
+      ansible_host: 11.0.0.7
+      ansible_user: vagrant
+      ansible_ssh_private_key_file: .vagrant/machines/web/virtualbox/private_key
+      ansible_become: true
+      ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+dbservers:
+  hosts:
+    db:
+      ansible_host: 11.0.0.8
+      ansible_user: vagrant
+      ansible_ssh_private_key_file: .vagrant/machines/db/virtualbox/private_key
+      ansible_become: true
+      ansible_ssh_common_args: '-o StrictHostKeyChecking=no'

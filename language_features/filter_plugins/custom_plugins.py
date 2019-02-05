@@ -15,6 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with Ansible.  If not, see <http://www.gnu.org/licenses/>.
 
+
 class FilterModule(object):
     ''' Custom filters are loaded by FilterModule objects '''
 
